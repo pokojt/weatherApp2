@@ -3,7 +3,12 @@ var Temp = require('../js/temperature.js').Temp;
 
 
 $(document).ready(function() {
+  $("#tempButtons").hide();
+
+
   $('#temperature').click(function() {
+    $("#tempButtons").show();
+
     var city = $('#location').val();
     $('#location').val("");
 
@@ -14,9 +19,19 @@ $(document).ready(function() {
       var celcius = newTemp.convertToCelcius();
       var fahrenheit = newTemp.convertToFahrenheit();
 
-      $('.showWeather').text("The temperature in " + city + " is " + celcius + " degrees Celcius and " + fahrenheit + " degrees Fahrenheit.");
-    }).fail(function(error) {
-      $('.showWeather').text(error.responseJSON.message);
+      $('.showWeather').text("The temperature in " + city + " is " + response.main.temp + "°K.");
+
+      $('#toFahrenheit').click(function() {
+        $('.showWeather').text("The temperature in " + city + " is " + fahrenheit + "°F.");
+      });
+      $('#toCelcius').click(function() {
+        $('.showWeather').text("The temperature in " + city + " is " + celcius + "°C.");
+      });
     });
+
   });
 });
+
+
+
+// First display both Kelvin and Celsius, then add functionality to allow the user to choose to display either Celsius or Fahrenheit.
