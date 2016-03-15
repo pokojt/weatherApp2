@@ -11,6 +11,7 @@ exports.Clock.prototype.check = function() {
 
     if(this.alarmTime === moment().format('HH:mm')) {
       $('body').addClass("alert");
+      $("#stopButton").show();
     };
 };
 

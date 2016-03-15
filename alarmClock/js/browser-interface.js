@@ -23,4 +23,9 @@ console.log(newAlarm);
 
   });
 
+  $("#stopButton").click(function(){
+    $('body').removeClass("alert");
+    $(".alarmConfirm").hide();
+    newAlarm.alarmTime = 0;
+  });
 });
