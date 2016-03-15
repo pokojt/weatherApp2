@@ -26,6 +26,7 @@ $(document).ready(function() {
       });
       $('#toCelcius').click(function() {
         $('.showWeather').text("The temperature in " + city + " is " + celcius + "°C.");
+
       });
     });
 
