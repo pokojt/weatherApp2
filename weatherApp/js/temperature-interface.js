@@ -14,7 +14,7 @@ $(document).ready(function() {
       var celcius = newTemp.convertToCelcius();
       var fahrenheit = newTemp.convertToFahrenheit();
 
-      $('.showWeather').text("The temperature in " + city + " is " + response.main.temp + ".");
+      $('.showWeather').text("The temperature in " + city + " is " + celcius + " degrees Celcius and " + fahrenheit + " degrees Fahrenheit.");
     }).fail(function(error) {
       $('.showWeather').text(error.responseJSON.message);
     });

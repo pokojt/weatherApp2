@@ -3,13 +3,14 @@ exports.Temp = function(kelvins) {
 };
 
 exports.Temp.prototype.convertToCelcius = function() {
-
-
+  var celcius = this.kelvins - 273.15;
+  return celcius.toFixed(1);
 }
 
 exports.Temp.prototype.convertToFahrenheit = function() {
 
-
+  var fahrenheit = (this.kelvins * (9/5)) - 459.67;
+  return fahrenheit.toFixed(1);
 }
 
 
