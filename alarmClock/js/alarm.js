@@ -8,9 +8,11 @@ exports.Clock.prototype.update = function() {
 
     var currentTime = moment().format('LTS');
 
+    return this.alarmTime;
+
     console.log(this.alarmTime);
 
-    if(this.alarmTime === currentTime) {
+    if(alarmTime === currentTime) {
       // alert('ALARM!!!!');
       $('body').addClass("alert");
     };
